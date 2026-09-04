@@ -161,7 +161,6 @@ if st.button(
 
         st.divider()
 
-
         # ---------------- ATS SCORE ----------------
 
         st.markdown(
@@ -171,22 +170,29 @@ if st.button(
 
         score = analysis.get("ats_score", 0)
 
-        score_col1, score_col2, score_col3 = st.columns(
-            [1, 2, 1]
-        )
+        score_col1, score_col2, score_col3 = st.columns([1, 2, 1])
 
         with score_col2:
-
             st.markdown(
                 f"""
                 <div class="score-box">
-                    <div>ATS MATCH SCORE</div>
+                    <div style="font-size:18px;">ATS MATCH SCORE</div>
                     <div class="score">{score}/100</div>
                 </div>
                 """,
                 unsafe_allow_html=True
             )
 
+            st.progress(
+                min(max(int(score), 0), 100) / 100
+            )
+
+            if score >= 80:
+              st.success("🔥 Excellent match for this job!")
+            elif score >= 60:
+               st.info("👍 Good match, but there is room for improvement.")
+            else:
+                st.warning("⚠️ Significant improvement is recommended.")
 
         st.write("")
 
