@@ -1,6 +1,7 @@
 import os
 import json
 import re
+import streamlit as st
 
 from google import genai
 from dotenv import load_dotenv
@@ -8,6 +9,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 api_key = os.getenv("GEMINI_API_KEY")
+
+if not api_key:
+    try:
+        api_key = st.secrets["GEMINI_API_KEY"]
+    except Exception:
+        api_key = None
 
 if not api_key:
     raise ValueError("GEMINI_API_KEY is missing in .env")
