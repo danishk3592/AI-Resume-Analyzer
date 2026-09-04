@@ -4,9 +4,9 @@ An AI-powered web application that analyzes resumes against job descriptions and
 
 ## 🌐 Live Demo
 
-🚀 **[Try the Live Application](YOUR_STREAMLIT_URL)**
+🚀 **[Try the Live Application]((https://ai-resume-analyzer-virtuoso.streamlit.app/))**
 
-📂 **[View Source Code on GitHub](YOUR_GITHUB_REPOSITORY_URL)**
+📂 **[View Source Code on GitHub]((https://github.com/danishk3592/AI-Resume-Analyzer.git))**
 
 ---
 
