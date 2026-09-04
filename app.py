@@ -1,7 +1,7 @@
 import streamlit as st
 
 from pdf_reader import extract_text_from_pdf
-from analyzer import analyze_resume
+from analyzer import analyze_resume, rewrite_resume_bullet
 
 
 # ---------------- PAGE CONFIG ----------------
@@ -350,3 +350,56 @@ st.divider()
 st.caption(
     "Built with Python • Streamlit • Gemini • PDF Processing"
 )
+
+st.divider()
+
+st.header("✍️ AI Resume Rewriter")
+
+st.write(
+    "Improve individual resume bullet points using AI and the target job description."
+)
+
+bullet = st.text_area(
+    "Paste a resume bullet point",
+    placeholder="Example: Developed a task scheduler using Java."
+)
+
+if st.button(
+    "✨ Rewrite Bullet Point",
+    use_container_width=True
+):
+
+    if not bullet.strip():
+        st.warning("Please enter a resume bullet point.")
+
+    elif not job_description.strip():
+        st.warning(
+            "Please enter a job description above so the AI can tailor the bullet."
+        )
+
+    else:
+
+        with st.spinner("✨ Rewriting your bullet point..."):
+
+            try:
+
+                improved_bullet = rewrite_resume_bullet(
+                    bullet,
+                    job_description
+                )
+
+                st.subheader("✅ Improved Version")
+
+                st.success(improved_bullet)
+
+                st.download_button(
+                    "📥 Download Improved Bullet",
+                    data=improved_bullet,
+                    file_name="improved_resume_bullet.txt",
+                    mime="text/plain",
+                    use_container_width=True
+                )
+
+            except Exception as e:
+
+                st.error(f"Something went wrong: {e}")

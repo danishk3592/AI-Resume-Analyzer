@@ -94,3 +94,34 @@ Rules:
         raise ValueError(
             "AI returned an invalid response. Please try analyzing again."
         )
+
+
+def rewrite_resume_bullet(bullet, job_description):
+    prompt = f"""
+You are an expert technical resume writer.
+
+Rewrite the following resume bullet point to make it:
+- Professional
+- Concise
+- Achievement-oriented
+- ATS-friendly
+- Relevant to the job description
+- Truthful — do not invent technologies, metrics, or achievements
+
+JOB DESCRIPTION:
+{job_description}
+
+ORIGINAL BULLET:
+{bullet}
+
+Return only the improved bullet point.
+Do not add quotation marks.
+Do not explain your changes.
+"""
+
+    response = client.models.generate_content(
+        model="gemini-3.6-flash",
+        contents=prompt
+    )
+
+    return response.text.strip()

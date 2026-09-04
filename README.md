@@ -1,3 +1,13 @@
+## 🌐 Live Demo
+
+👉 [Try the AI Resume Analyzer](https://ai-resume-analyzer-virtuoso.streamlit.app/)
+
+## 📸 Screenshots
+
+### Resume Analysis Dashboard
+
+![AI Resume Analyzer](screenshots/dashboard.png)
+
 # 🤖 AI Resume Analyzer & Job Match Assistant
 
 An AI-powered web application that analyzes a candidate's resume against a job description and provides an ATS compatibility score, skill-gap analysis, resume improvement suggestions, and interview questions.
