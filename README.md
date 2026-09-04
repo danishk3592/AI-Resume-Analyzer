@@ -32,6 +32,38 @@ An AI-powered web application that analyzes a candidate's resume against a job d
 - 📥 Downloadable analysis report
 - 🌐 Interactive Streamlit web interface
 
+## 📸 Application Screenshots
+
+### 🏠 Dashboard
+
+The main interface allows users to upload a resume and provide a target job description.
+
+![Dashboard](screenshots/dashboard.png)
+
+### 📊 ATS Score Analysis
+
+The application generates an AI-powered ATS compatibility score for the resume and target role.
+
+![ATS Score Analysis](screenshots/ats-score-analysis.png)
+
+### 🎯 Resume & Skill Analysis
+
+The AI identifies matched skills, missing skills, and provides actionable resume improvement recommendations.
+
+![ATS Analysis](screenshots/ats-analysis.png)
+
+### ✍️ AI Resume Rewriter
+
+Users can rewrite individual resume bullet points to make them more professional and job-relevant.
+
+![AI Resume Rewriter](screenshots/resume-rewriter.png)
+
+### 🎤 AI Interview Questions
+
+The application generates role-specific interview questions based on the resume and job description.
+
+![Interview Questions](screenshots/interview-questions.png)
+
 ## 💡 How It Works
 
 1. User uploads a resume in PDF format.
